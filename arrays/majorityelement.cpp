@@ -7,11 +7,11 @@ int majorityElement(vector<int> nums) {
 
     //    MOORE'S ALGORITHM
    int freq = 0, ans = 0;
-    for(int i : nums) {
+    for(int num : nums) {
        if (freq == 0) {
-        ans = nums[i];
+        ans = num;
        }
-       if (nums[i] == ans) {
+       if (num == ans) {
         freq++;
        } else {
         freq--;
