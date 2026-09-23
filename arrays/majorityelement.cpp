@@ -7,6 +7,7 @@ int majorityElement(vector<int> nums) {
 
     //    MOORE'S ALGORITHM
    int freq = 0, ans = 0;
+   int n = nums.size();
     for(int num : nums) {
        if (freq == 0) {
         ans = num;
@@ -17,7 +18,17 @@ int majorityElement(vector<int> nums) {
         freq--;
        }
     }
-    return ans;
+    int freq=0;
+    for(int val : nums) {
+        if(ans == val) {
+            freq++;
+        }
+    }
+    if (freq > n/2) {
+        return ans;
+    } else {
+        return -1;
+    }
     //    SORTING
     // int n = nums.size();
     // sort(nums.begin(),nums.end());
