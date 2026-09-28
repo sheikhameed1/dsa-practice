@@ -1,26 +1,31 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-void isUnique(int arr[], int size) {
-    for(int i = 0; i < size; i++) {
-     int count = 0;
-        for(int j = 0; j < size; j++) {
-            if (arr[i] == arr[j]) {
-                count +=1;
+vector <int> uniqueE(vector<int> &nums) {
+    vector<int> result;
+    for(int i = 0; i < nums.size(); i++) {
+        int freq = 0;
+        for(int j = 0; j < nums.size(); j++) {
+            if(nums[i] == nums[j]) {
+                freq++;
             }
-            }
-        if (count == 1) {
-            cout << arr[i] << endl;
+        }
+        if(freq == 1) {
+            result.push_back(nums[i]);
         }
         }
-    }
-
+        return result;
+}
 
 int main() {
 
-    int arr[] = {2, 4, 6, 8, 7, 3, 5, 1, 3, 5, 2};
-    int size = 11;
-    isUnique(arr,size);
+    vector <int> nums = {2, 4, 6, 8, 7, 3, 5, 1, 3, 5, 2};
+    vector <int> result  = uniqueE(nums);
 
+    for(int val : result) {
+            cout << val << " ";
+        }
+        cout << endl;
     return 0;
 }
