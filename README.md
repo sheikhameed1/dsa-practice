@@ -1,2 +1,2 @@
 # dsa-practice
-My notes of DSA problems in C++
+My solutions of DSA problems in C++
